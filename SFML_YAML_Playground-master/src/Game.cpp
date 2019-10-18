@@ -10,7 +10,7 @@ Game::Game()
 	: m_window(sf::VideoMode(ScreenSize::s_height, ScreenSize::s_width, 32), "SFML Playground", sf::Style::Default)
 	, m_Tank(m_spriteSheetTexture, sf::Vector2f(0,0))
 {
-	m_window.setVerticalSyncEnabled(true);
+	//m_window.setVerticalSyncEnabled(true);
 
 	int currentLevel = 1;
 
@@ -112,34 +112,11 @@ void Game::processGameEvents(sf::Event& event)
 		case sf::Keyboard::Escape:
 			m_window.close();
 			break;
-		case sf::Keyboard::Up:
-			// Up key was pressed...
-			break;
 		default:
 			break;
 		}
 	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-	{
-		m_Tank.increaseSpeed();
-	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-		m_Tank.decreaseSpeed();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		m_Tank.increaseRotation();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		m_Tank.decreaseRotation();
-	}
-
 }
-
 ////////////////////////////////////////////////////////////
 void Game::update(double dt)
 {
